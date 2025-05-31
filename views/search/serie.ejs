@@ -1,0 +1,51 @@
+<div class="search-container">
+    <h2>Searching for Series:</h2>
+    <form action="/search/serie" method="GET">
+        <div class="row">
+            <div class="row-item">
+                <label>Name</label>
+                <input type="text" name="name" value="<% searchOptions.name %>">
+            </div>
+            <div class="row-item">
+                <label>Published Before</label>
+                <input type="date" name="publishedBefore" value="<% searchOptions.publishedBefore %>">
+            </div>
+            <div class="row-item">
+                <label>Published After</label>
+                <input type="date" name="publishedAfter" value="<% searchOptions.publishedAfter %>">
+            </div>
+        </div>
+        <div class="row">
+            <div class="row-item">
+                <label>Rating</label>
+                <input type="Number" name="rating" value="<% searchOptions.rating %>">
+            </div>
+            <div class="row-item">
+                <label>Seasons</label>
+                <input type="Number" name="Seasons" value="<% searchOptions.Seasons %>">
+            </div>
+            <div class="row-item">
+                <label>Director</label>
+                <input type="text" name="director" value="<% searchOptions.director %>">
+            </div>
+        </div>
+        <div class="row">
+            <button class="btn btn-search" type="submit">Search</button>
+        </div>
+    </form>
+    <div class="movie-container-search">
+        <% series.forEach(serie => { %> 
+            <a href="/series/<%= serie.id %>">
+                <% if (serie.cover && serie.cover.filePath) { %>
+                    <!-- Bild aus `public/uploads` anzeigen -->
+                    <img class="cover" src="<%= serie.cover.filePath %>" alt="<%= serie.name %>" width="150">
+                <% } else if (serie.cover && serie.cover.data) { %>
+                    <!-- Falls `filePath` fehlt, Base64-String nutzen -->
+                    <img class="cover" src="data:<%= serie.cover.contentType %>;base64,<%= serie.cover.data.toString('base64') %>" alt="<%= serie.name %>" width="150">
+                <% } else { %>
+                    <p>Kein Cover verfügbar</p>
+                <% } %>
+            </a>
+        <% }) %>
+    </div>
+</div>

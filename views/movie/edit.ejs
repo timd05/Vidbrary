@@ -1,0 +1,47 @@
+<div class="new-container">
+    <h2>Currently Editing: <%=movie.name%></h2>
+    <form action="/movies/<%= movie.id %>?_method=PUT" method="POST" enctype="multipart/form-data">
+        <div class="row">
+            <div class="row-item">
+                <label>Name</label>
+                <input type="text" name="name" value="<%= movie.name %>">
+            </div>
+            <div class="row-item">
+                <label>Length</label>
+                <input type="Number" name="length" min="1" value="<%= movie.length %>">
+            </div>
+            <div class="row-item">
+                <label>Rating</label>
+                <input type="Number" name="rating" min="0" max="10" value="<%= movie.rating %>">
+            </div>
+        </div>
+        <div class="row">
+            <div class="row-item">
+                <label>Actors</label>
+                <input type="text" name="actors" value="<%= movie.actors %>">
+            </div>
+            <div class="row-item">
+                <label>Director</label>
+                <input type="text" name="director" value="<%= movie.director %>">
+            </div>
+            <div class="row-item">
+                <label>Publish Date</label>
+                <input type="Date" name="publishDate" value="<%= movie.publishDate == null ? '' : movie.publishDate.toISOString().split('T')[0] %>">
+            </div>
+        </div>
+        <div class="row">
+            <div class="row-item">
+                <label>Description</label>
+                <textarea class="description" name="description" value="<%= movie.description %>"><%= movie.description %></textarea>
+            </div>
+            <div class="row-item">
+                <label>Cover</label>
+                <input type="file" name="cover" value="<%= movie.cover %>">
+            </div>
+        </div>
+        <div class="btn-row btn-new">
+            <a class="btn" href="/movies">Cancel</a>
+            <button class="btn" type="submit">Update</button>
+        </div>
+    </form>
+</div>

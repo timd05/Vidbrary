@@ -1,0 +1,9 @@
+
+.index{
+    padding-left: 2rem;
+}
+
+.cover{
+    width: 190px;
+    height: calc(200px / 0.75);
+}

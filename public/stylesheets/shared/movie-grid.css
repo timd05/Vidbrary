@@ -1,0 +1,11 @@
+.movie-container-search{
+    margin-top: 1rem;
+    margin-left: 3rem;
+}
+
+.cover-grid{
+    display: grid;
+    grid-gap: 2rem;
+    grid-template-columns: repeat(auto-fill, 190px);
+    margin-left: 1rem;
+}

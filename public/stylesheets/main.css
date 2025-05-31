@@ -1,0 +1,39 @@
+@import 'shared/layout.css';
+@import 'shared/index.css';
+@import 'shared/movie.css';
+@import 'shared/new.css';
+@import 'shared/button.css';
+@import 'shared/serie.css';
+@import 'shared/search.css';
+@import 'shared/movie-grid.css';
+
+*{
+    box-sizing: border-box;
+    font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+
+body{
+    background-image: url("background.jpg");
+}
+
+.background{
+    background: linear-gradient(to right, hsl(200, 2%, 68%), hsl(210, 5%, 85%));
+    padding: 2rem;
+    margin: 2rem;
+    border:solid 2px black;
+    border-radius: 1rem;
+}
+
+.header{
+    font-size: 3rem;
+    transition: all 0.1s;
+}
+
+.header:hover{
+    color:white;
+    transform:scale(1.1);
+}
+
+.vid{
+    margin-left: 2rem;
+}

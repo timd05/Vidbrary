@@ -1,0 +1,22 @@
+
+.list{
+    display: flex;
+    list-style: none;
+}
+
+.list-item{
+    padding-left: 1rem;
+    padding-right: 1rem;
+}
+
+.link{
+    text-decoration: none;
+    transition: all 0.1s;
+    color: black;
+    display: inline-block;
+}
+
+.list a:hover{
+    transform:scale(1.1);
+    color:white;
+}

@@ -1,0 +1,16 @@
+<h2>Series</h2>
+<div class="cover-grid">
+    <% series.forEach(serie => { %> 
+        <a href="/series/<%= serie.id %>">
+            <% if (serie.cover && serie.cover.filePath) { %>
+                <!-- Bild aus `public/uploads` anzeigen -->
+                <img class="cover" src="<%= serie.cover.filePath %>" alt="<%= serie.name %>" width="150">
+            <% } else if (serie.cover && serie.cover.data) { %>
+                <!-- Falls `filePath` fehlt, Base64-String nutzen -->
+                <img class="cover" src="data:<%= serie.cover.contentType %>;base64,<%= serie.cover.data.toString('base64') %>" alt="<%= serie.name %>" width="150">
+            <% } else { %>
+                <p>Kein Cover verfügbar</p>
+            <% } %>
+        </a>
+    <% }) %>
+</div>

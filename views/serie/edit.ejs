@@ -1,0 +1,47 @@
+<div class="new-container">
+    <h2>Currently Editing: <%=serie.name%></h2>
+    <form action="/series/<%= serie.id %>?_method=PUT" method="POST" enctype="multipart/form-data">
+        <div class="row">
+            <div class="row-item">
+                <label>Name</label>
+                <input type="text" name="name" value="<%= serie.name %>">
+            </div>
+            <div class="row-item">
+                <label>Seasons</label>
+                <input type="Number" name="Seasons" min="1" value="<%= serie.Seasons %>">
+            </div>
+            <div class="row-item">
+                <label>Rating</label>
+                <input type="Number" name="rating" min="0" max="10" value="<%= serie.rating %>">
+            </div>
+        </div>
+        <div class="row">
+            <div class="row-item">
+                <label>Actors</label>
+                <input type="text" name="actors" value="<%= serie.actors %>">                
+            </div>
+            <div class="row-item">
+                <label>Director</label>
+                <input type="text" name="director" value="<%= serie.director %>">
+            </div>
+            <div class="row-item">
+                <label>First Published</label>
+                <input type="Date" name="firstPublished" value="<%= serie.firstPublished == null ? '' : serie.firstPublished.toISOString().split('T')[0] %>">
+            </div>
+        </div>
+        <div class="row">
+            <div class="row-item">
+                <label>Description</label>
+                <textarea class="description" name="description" value="<%= serie.description %>"><%= serie.description %></textarea>
+            </div>
+            <div class="row-item">
+                <label>Cover</label>
+                <input type="file" name="cover" value="<%= serie.cover %>">
+            </div>
+        </div>
+        <div class="btn-row btn-new">
+            <a class="btn" href="/series">Cancel</a>
+            <button class="btn" type="submit">Update</button>
+        </div>
+    </form>
+</div>

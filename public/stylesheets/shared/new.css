@@ -1,0 +1,28 @@
+
+.new-container{
+    margin-left: 1rem;
+}
+
+.row{
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+.row-item{
+    display: flex;
+    flex-direction: column;
+    margin-right: 3rem;
+    margin-left: 3rem;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+    width: 250px;
+}
+
+.description{
+    height: calc(200px / 0.75);
+}
+
+.btn-new{
+    margin-left: 3rem;
+}

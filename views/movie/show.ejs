@@ -1,0 +1,23 @@
+<h2><%=movie.name%></h2>
+<div class="show">
+    <div class="show-movie">
+        <img class="cover" src="<%=movie.cover.filePath%>">
+        <div class="movie-info">
+            <div class="movie-info-item">Name: <%=movie.name%></div>
+            <div class="movie-info-item">Length: <%=movie.length%></div>
+            <div class="movie-info-item">Rating: <%=movie.rating%></div>
+            <div class="movie-info-item">Actors: <%=movie.actors%></div>
+            <div class="movie-info-item">Director: <%=movie.director%></div>
+            <div class="movie-info-item">Publish Date: <%=movie.publishDate.toDateString()%></div>
+            <div class="movie-info-item">Description:</div>
+            <div class="movie-info-item movie-description"><%=movie.description%></div>
+            <div class="btn-row">
+                <a class="btn" href="/">Cancel</a>
+                <a class="btn" href="/movies/<%= movie.id %>/edit">Edit</a>
+                <form method="POST" action="<%= `/movies/${movie.id}` %>?_method=DELETE">
+                    <button class="btn btn-danger" type="submit">Delete</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>

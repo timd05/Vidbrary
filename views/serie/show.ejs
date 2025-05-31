@@ -1,0 +1,23 @@
+<h2><%=serie.name%></h2>
+<div class="show">
+    <div class="show-serie">
+        <img class="cover" src="<%=serie.cover.filePath%>">
+        <div class="serie-info">
+            <div class="serie-info-item">Name: <%=serie.name%></div>
+            <div class="serie-info-item">Seasons: <%=serie.Seasons%></div>
+            <div class="serie-info-item">Rating: <%=serie.rating%></div>
+            <div class="serie-info-item">Actors: <%=serie.actors%></div>
+            <div class="serie-info-item">Director: <%=serie.director%></div>
+            <div class="serie-info-item">First Published: <%=serie.firstPublished.toDateString()%></div>
+            <div class="serie-info-item">Description:</div>
+            <div class="serie-info-item serie-description"><%=serie.description%></div>
+            <div class="btn-row">
+                <a class="btn" href="/">Cancel</a>
+                <a class="btn" href="/series/<%= serie.id %>/edit">Edit</a>
+                <form method="POST" action="<%= `/series/${serie.id}` %>?_method=DELETE">
+                    <button class="btn btn-danger" type="submit">Delete</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>

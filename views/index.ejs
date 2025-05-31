@@ -1,0 +1,37 @@
+<div class="vid">
+    <h2>Willkommen in der Vidbrary!</h2>
+    <div class="index">
+        <h3>Recently added movies:</h3>
+        <div class="cover-grid">
+            <% movies.forEach(movie => { %> 
+                <a href="/movies/<%= movie.id %>">
+                    <% if (movie.cover && movie.cover.filePath) { %>
+                        <!-- Bild aus `public/uploads` anzeigen -->
+                        <img class="cover" src="<%= movie.cover.filePath %>" alt="<%= movie.name %>" width="150">
+                    <% } else if (movie.cover && movie.cover.data) { %>
+                        <!-- Falls `filePath` fehlt, Base64-String nutzen -->
+                        <img class="cover" src="data:<%= movie.cover.contentType %>;base64,<%= movie.cover.data.toString('base64') %>" alt="<%= movie.name %>" width="150">
+                    <% } else { %>
+                        <p>Kein Cover verfügbar</p>
+                    <% } %>
+                </a>
+            <% }) %>
+        </div>
+        <h3>Recently added series:</h3>
+        <div class="cover-grid">
+            <% series.forEach(serie => { %> 
+                <a href="/series/<%= serie.id %>">
+                    <% if (serie.cover && serie.cover.filePath) { %>
+                        <!-- Bild aus `public/uploads` anzeigen -->
+                        <img class="cover" src="<%= serie.cover.filePath %>" alt="<%= serie.name %>" width="150">
+                    <% } else if (serie.cover && serie.cover.data) { %>
+                        <!-- Falls `filePath` fehlt, Base64-String nutzen -->
+                        <img class="cover" src="data:<%= serie.cover.contentType %>;base64,<%= serie.cover.data.toString('base64') %>" alt="<%= serie.name %>" width="150">
+                    <% } else { %>
+                        <p>Kein Cover verfügbar</p>
+                    <% } %>
+                </a>
+            <% }) %>
+        </div>
+    </div>
+</div>

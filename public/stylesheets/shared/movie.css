@@ -1,0 +1,20 @@
+.show-movie{
+    display: flex;
+}
+
+.show{
+    padding-left: 1rem;
+}
+
+.movie-info{
+    padding-left: 1rem;
+    max-width: 400px;
+}
+
+.movie-info-item{
+    margin:5px;
+}
+
+.movie-description{
+    padding-left: 1rem;
+}

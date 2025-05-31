@@ -1,0 +1,20 @@
+.show-serie{
+    display: flex;
+}
+
+.show{
+    padding-left: 1rem;
+}
+
+.serie-info{
+    padding-left: 1rem;
+    max-width: 400px;
+}
+
+.serie-info-item{
+    margin:5px;
+}
+
+.serie-description{
+    padding-left: 1rem;
+}
